@@ -1,0 +1,63 @@
+<%- layout('../templates/login.ejs') %>
+
+    <body>
+        <div class="container">
+            <!--div class="row"-->
+                <h1 align="center" class="text-dark" >Datos Clientes</h1>
+                <a class="btn btn-success btn-block my-4"
+                href="/agregarcliente">
+                    Crear nuevo cliente
+                </a>
+                <!--Lista-->
+                <!--div class="col-md-7"-->
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Numero </th>
+                                <th>Cedula </th>
+                                <th>Nombre </th>
+                                <th>Direccion </th>
+                                <th>Telefono </th>
+                                <th>Correo </th>
+                                <th>Operaciones </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(var i=0; i < clientes.length; i++) {%>
+                                <tr>
+                                    <td>
+                                        <%= i + 1 %>
+                                    </td>
+                                    <!--muestrame los datos de uno en uno-->
+                                    <td>
+                                        <%= clientes[i].cedula%>
+                                    </td>
+                                    <td>
+                                        <%= clientes[i].nombre%>
+                                    </td>
+                                    <td>
+                                        <%= clientes[i].direccion%>
+                                    </td>
+                                    <td>
+                                        <%= clientes[i].telefono%>
+                                    </td>
+                                    <td>
+                                        <%= clientes[i].correo%>
+                                    </td>
+                                    <td>
+                                        <a href="/editcliente/<%= clientes[i]._id%>"
+                                            class="btn btn-warning btn-block">Editar</a>
+                                        <a href="/eliminarcliente/<%= clientes[i]._id%>"
+                                            class="btn btn-danger btn-block">Eliminar</a>                                        
+                                    </td>
+                                </tr>
+
+                                <% } %>
+                                    <!--recorreme los clientes-->
+
+                        </tbody>
+                    </table>
+                <!--/div-->
+            </div>
+        <!--/div-->
+    </body>

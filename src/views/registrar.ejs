@@ -1,0 +1,38 @@
+
+<%- layout('../templates/login.ejs') %> 
+<div class=row>
+    <div class="col-md-4 offset-md-4">
+        <div class="card mt-4 text-center">
+            <div class="card-header">
+                <h2>Registrarse</h2>
+            </div>
+            <div class="card">
+                <div class="card body">
+                    <form action="/singup" method="post" style="padding: 3rem;">
+                        <div class="formgroup" style="padding: 0.5rem;">
+                            <input type="text" name="username" placeholder="Ingrese usuario" class="form-control">
+                        </div>
+                        <div class="formgroup" style="padding: 0.5rem;">
+                            <input type="password" name="password" placeholder="Ingrese contraseña" class="form-control">
+                        </div>
+                        <div class="formgroup" style="padding: 0.5rem;">
+                            <input type="text" name="nombreU" placeholder="Ingrese nombre" class="form-control">
+                        </div>
+                        <div class="formgroup" style="padding: 0.5rem;">
+                            <input type="text" name="apellidosU" placeholder="Ingrese apellidos" class="form-control">
+                        </div>
+                        <div class="formgroup" style="padding: 0.5rem;">
+                            <input type="text" name="cedulaU" placeholder="Ingrese cedula" class="form-control">
+                        </div>
+                        <div class="formgroup" style="padding: 0.5rem;">
+                            <input type="text" name="emailU" placeholder="Ingrese correo electrónico" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block mt-4">
+                            Registrate
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

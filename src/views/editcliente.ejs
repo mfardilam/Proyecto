@@ -1,0 +1,48 @@
+<%- layout('../templates/login.ejs') %>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="card">
+                        <div class="card body">
+                            <form action="/editcliente/<%=cliente._id %> " method="post">
+                                <div class="form-group">
+                                    <input type="text" name="cedula" placeholder="inserte el numero de cedula"
+                                        class="form-control" value="<%=cliente.cedula%>">
+        
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="nombre" placeholder="cual es tu nombre" class="form-control"
+                                        value="<%=cliente.nombre%>">
+        
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="direccion" placeholder="ingresa tu direccion " class="form-control"
+                                        value="<%=cliente.direccion%>">
+        
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="telefono" placeholder="inserte el numero de telefono"
+                                        class="form-control" value="<%=cliente.telefono %> ">
+        
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="correo" placeholder="ingresa tu correo " class="form-control"
+                                        value="<%=cliente.correo%>">
+        
+                                </div>
+        
+                                <button type="submit" class="btn btn-primary btn-block">
+                                    Actualizar
+        
+                                </button>
+                            </form>
+        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+    </body>

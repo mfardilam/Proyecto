@@ -1,0 +1,60 @@
+<%- layout('../templates/login.ejs') %>
+<body>
+    <div class="container">
+        <h1 align="center" class="text-dark" >Datos Proveedores</h1>
+        <a class="btn btn-success btn-block my-4"
+        href="/proveedores/crear">
+            Crear nuevo proveedor
+        </a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col"># Id</th>
+                    <th scope="col">NIT</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Dirección</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Ciudad</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (arrayProveedores.length> 0) { %>
+                    <% arrayProveedores.forEach(proveedor=> { %>
+                        <tr>
+                            <th scope="row">
+                                <%= proveedor.id %>
+                            </th>
+                            <td>
+                                <%= proveedor.nit %>
+                            </td>
+                            <td>
+                                <%= proveedor.nombreP %>
+                            </td>
+                            <td>
+                                <%= proveedor.direccionP %>
+                            </td>
+                            <td>
+                                <%= proveedor.telefonoP %>
+                            </td>
+                            <td>
+                                <%= proveedor.ciudadP %>
+                            </td>
+                            <td>
+                                <a href="proveedores/<%= proveedor.id %>" class="btn btn-warning btn-sm">
+                                    Editar
+                                </a>
+                                <a href="proveedores/eliminarProv/<%= proveedor.id %>" class="btn btn-danger btn-sm">
+                                    Eliminar
+                                </a>
+                            </td>
+                        </tr>
+
+                        <% }) %>
+                            <% } %>
+
+
+            </tbody>
+        </table>
+    </div>
+</body>

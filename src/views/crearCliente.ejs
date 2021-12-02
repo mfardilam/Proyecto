@@ -1,0 +1,38 @@
+<%- layout('../templates/login.ejs') %> 
+<body>
+    <h1 align="center">Crear Cliente</h1>
+    <div class="container">
+        <form action="/agregarcliente" method="post">
+            <div class="form-group">
+                <input type="text" name="cedula" placeholder="inserte el numero de cedula"
+                    class="form-control">
+
+            </div>
+            <div class="form-group">
+                <input type="text" name="nombre" placeholder="cual es tu nombre"
+                    class="form-control">
+
+            </div>
+            <div class="form-group">
+                <input type="text" name="direccion" placeholder="ingresa tu direccion "
+                    class="form-control">
+
+            </div>
+            <div class="form-group">
+                <input type="text" name="telefono" placeholder="inserte el numero de telefono"
+                    class="form-control">
+
+            </div>
+            <div class="form-group">
+                <input type="text" name="correo" placeholder="ingresa tu correo "
+                    class="form-control">
+
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+                Agregar Cliente
+
+            </button>
+        </form>
+    </div>
+</body>

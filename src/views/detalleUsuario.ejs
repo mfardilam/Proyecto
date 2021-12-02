@@ -1,0 +1,91 @@
+<%- layout('../templates/login.ejs') %> 
+<body>
+    <h1 align="center" class="text-dark">Datos de Usuarios</h1>
+        <!--% if (error) { %>
+            <p>
+                <!%= mensaje %>
+            </p>
+            <a href="/usuarios" class="btn btn-dark btn-block">
+                Volver al listado
+            </a>
+            <!% } %-->
+
+                <!--% if (!error) { %-->
+                    <form action="/usuarios/<%= usuario.id %> " method="post" >
+                    <!--form id="formularioEditar" data-id="<%= usuario.id %> "--> 
+                        <input type="text" class="form-control my-2" name="nombreU" value="<%= usuario.nombreU %>" id="nombreInput">
+                        <input type="text" class="form-control my-2" name="apellidosU" value="<%= usuario.apellidosU %>" id="apellidosInput">
+                        <input type="text" class="form-control my-2" name="cedulaU" value="<%= usuario.cedulaU %>" id="cedulaInput">
+                        <input type="text" class="form-control my-2" name="emailU" value="<%= usuario.emailU %>" id="emailInput">
+                        <button type="submit" 
+                        class="btn btn-warning btn-block">
+                            Editar usuario
+                        </button>
+                    </form>
+
+                    <hr>
+                            <!--button
+                                    class="btn btn-danger btn-sm mt-2"
+                                    id="btnEliminar"
+                                    data-id="<!%= usuario.id %>">
+                                    Eliminar
+                                    </button-->
+                    <!--% } %-->
+    </div>
+</body>
+<script>
+       /*  const btnEliminar = document.querySelector('#btnEliminar')
+        btnEliminar.addEventListener('click', async()=>{
+            console.log('Has dado click')//Acá muestra cuando presionamos el boton 
+            const id = btnEliminar.dataset.id
+            console.log(id,' Este es el id')//pinta el id del que vamos a eliminar
+            //vamos a conectar a BD
+            try{
+                const data = await fetch(`/usuarios/${id}`,{
+                    method: 'delete'
+                })
+                const res = await data.json()
+                //console.log(res)
+                if(res.estado){
+                    window.location.href = "/usuarios"
+                }else{
+                    console.log(res)
+                }
+            }catch(error){
+                console.log(error)
+            }
+        });
+
+
+    //Codigo de editar el dato en la BD para unir con la ruta y el modelo
+    const formularioEditar = document.querySelector('#formularioEditar')
+    formularioEditar.addEventListener('submit', async(e) => {
+        e.preventDefault()
+        //console.log('submit') //aquí probamos que el form editar traiga el submit
+        const nombre = formularioEditar.elements['nombreU'].value //usa el name
+        const apellidos = document.querySelector('#apellidosInput').value //usa el id
+        const cedula = document.querySelector('#cedulaInput').value
+        const email = document.querySelector('#emailInput').value
+        const id = formularioEditar.dataset.id //no se pinta pero sí se traera
+        console.log(nombre, apellidos, id) //probamos que los datos estan cargando para editar
+        try{
+            const data = await fetch(`/usuarios/${id}`, {
+                method: 'put',
+                headers : {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({nombre, apellidos, cedula, email})
+            })
+            const res = await data.json()
+            if (res.estado) {
+                window.location.href='/usuarios'
+            } else {
+                console.log(res)
+            }
+            console.log(res)
+        }catch(error){
+            console.log(error)
+        }
+    }) */
+
+</script>

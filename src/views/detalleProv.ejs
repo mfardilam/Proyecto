@@ -1,0 +1,96 @@
+<%- layout('../templates/login.ejs') %>
+<body>
+    <h1 align="center" class="text-dark">Datos Proveedores</h1>
+    <!--    
+    <!% if (error) { %>
+            <p>
+                <!%= mensaje %>
+            </p>
+            <a href="/proveedores" class="btn btn-dark btn-block">
+                Volver al listado
+            </a-->
+            <!--% } %-->
+
+                <!--% if (!error) { %-->
+                    <!--form id="formularioEditar" data-id="<!%= proveedor.id %>"-->
+                    <form action="/proveedores/<%= proveedor.id %> " method="post" >  
+                        <input type="text" class="form-control my-2" name="nit" value="<%= proveedor.nit %>" id="nitInput">
+                        <input type="text" class="form-control my-2" name="nombreP" value="<%= proveedor.nombreP %>" id="nombreInput">
+                        <input type="text" class="form-control my-2" name="direccionP" value="<%= proveedor.direccionP %>" id="dirInput">
+                        <input type="text" class="form-control my-2" name="telefonoP" value="<%= proveedor.telefonoP %>" id="telInput">
+                        <input type="text" class="form-control my-2" name="ciudadP" value="<%= proveedor.ciudadP %>" id="ciudadInput">
+                        <button type="submit" 
+                        class="btn btn-warning btn-block">
+                            Editar proveedor
+                        </button>
+                    </form>
+
+                    <hr>
+                            <!--button
+                                    class="btn btn-danger btn-sm mt-2"
+                                    id="btnEliminar"
+                                    data-id="<!-%= proveedor.id %>">
+                                    Eliminar
+                                    </button-->
+                    <!--% } %-->
+    </div>
+</body>
+
+<script>
+    /*
+    //Aqui se captura lo que trae wl boton eliminar id = btnEliminar 
+    const btnEliminar = document.querySelector('#btnEliminar')
+    btnEliminar.addEventListener('click', async()=>{
+        console.log('Has dado click')//Acá muestra cuando presionamos el boton 
+        const id = btnEliminar.dataset.id
+        console.log(id,' Este es el id')//pinta el id del que vamos a eliminar
+        //vamos a conectar a BD
+        try{
+            const data = await fetch(`/proveedores/${id}`,{
+                method: 'delete'
+            })
+            const res = await data.json()
+            //console.log(res)
+            if(res.estado){
+                window.location.href = "/proveedores"
+            }else{
+                console.log(res)
+            }
+        }catch(error){
+            console.log(error)
+        }
+    });
+
+    //Codigo de editar el dato en la BD para unir con la ruta y el modelo
+    const formularioEditar = document.querySelector('#formularioEditar')
+    formularioEditar.addEventListener('submit', async(e) => {
+        e.preventDefault()
+        //console.log('submit') aquí probamos que el form editar traiga el submit
+        const nit = formularioEditar.elements['nit'].value //usa el name
+        const nombre = document.querySelector('#nombreInput').value //usa el id
+        const direccion = document.querySelector('#dirInput').value
+        const telefono = document.querySelector('#telInput').value
+        const ciudad = document.querySelector('#ciudadInput').value
+        const id = formularioEditar.dataset.id //no se pinta pero sí se traera
+        //console.log(nombre, nit, direccion, id) //probamos que los datos estan cargando para editar
+        try{
+            const data = await fetch(`/proveedores/${id}`, {
+                method: 'put',
+                headers : {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({nit, nombre, direccion, telefono, ciudad})
+            })
+            const res = await data.json()
+            if (res.estado) {
+                window.location.href='/proveedores'
+            } else {
+                console.log(res)
+            }
+            console.log(res)
+        }catch(error){
+            console.log(error)
+        }
+    });
+    */
+</script>

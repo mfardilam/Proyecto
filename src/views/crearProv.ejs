@@ -1,0 +1,37 @@
+<%- layout('../templates/login.ejs') %>
+<body>
+    <h1 align="center">Crear nuevo proveedor</h1>
+    <div class="container">
+        <form action="/proveedores" method="post">
+            <input type="text"
+            placeholder="Agregar NIT del proveedor"
+            class="form-control my-2"
+            name="nit">
+
+            <input type="text"
+            placeholder="Agregar nombre del proveedor"
+            class="form-control my-2"
+            name="nombreP">
+
+            <input type="text"
+            placeholder="Agregar dirección del proveedor"
+            class="form-control my-2"
+            name="direccionP">
+
+            <input type="text"
+            placeholder="Agregar teléfono del proveedor"
+            class="form-control my-2"
+            name="telefonoP">
+
+            <input type="text"
+            placeholder="Agregar ciudad del proveedor"
+            class="form-control my-2"
+            name="ciudadP">
+
+            <button type="submit"
+            class="btn btn-success btn-block">
+            Agregar Proveedor
+            </button>    
+        </form>
+    </div>
+</body>

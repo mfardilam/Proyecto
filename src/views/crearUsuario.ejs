@@ -1,0 +1,42 @@
+<%- layout('../templates/login.ejs') %> 
+<body>
+    <h1 align="center">Crear Usuario</h1>
+    <div class="container">
+        <form action="/usuariosP" method="post">
+            <input type="text"
+            placeholder="Agregar usuario (username)"
+            class="form-control my-2"
+            name="username">
+
+            <input type="password"
+            placeholder="Agregar contraseña"
+            class="form-control my-2"
+            name="password">
+
+            <input type="text"
+            placeholder="Agregar nombres"
+            class="form-control my-2"
+            name="nombreU">
+
+            <input type="text"
+            placeholder="Agregar apellidos"
+            class="form-control my-2"
+            name="apellidosU">
+
+            <input type="text"
+            placeholder="Agregar cedula"
+            class="form-control my-2"
+            name="cedulaU">
+
+            <input type="text"
+            placeholder="Agregar correo electrónico"
+            class="form-control my-2"
+            name="emailU">
+
+            <button type="submit"
+            class="btn btn-success btn-block">
+            Agregar Usuario
+            </button>    
+        </form>
+    </div>
+</body>
