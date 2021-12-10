@@ -1,0 +1,45 @@
+<%- layout('../templates/cali.ejs') %>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card body">
+                        <form action="/cali/editcliente/<%=clientesCali._id %> " method="post">
+                            <div class="form-group">
+                                <input type="text" name="cedula" placeholder="Ingrese el numero de cedula"
+                                    class="form-control" value="<%=clientesCali.cedula%>">
+    
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="nombre" placeholder="Ingrese su nombre" class="form-control"
+                                    value="<%=clientesCali.nombre%>">
+    
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="direccion" placeholder="Ingrese su direccion " class="form-control"
+                                    value="<%=clientesCali.direccion%>">
+    
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="telefono" placeholder="Ingrese su numero de telefono"
+                                    class="form-control" value="<%=clientesCali.telefono %> ">
+    
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="correo" placeholder="Ingrese su correo " class="form-control"
+                                    value="<%=clientesCali.correo%>">
+    
+                            </div>
+    
+                            <button type="submit" class="btn btn-primary btn-block">
+                                Actualizar    
+                            </button>
+                        </form>
+    
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+</body>

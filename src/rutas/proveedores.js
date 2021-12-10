@@ -38,25 +38,6 @@ router.post('/', async (req, res) => {
     }
 });
 
-//Botones y pantalla de crear////////////////
-//Detallar el cliente para editar y borrar
-/* router.get('/:id', async(req, res) => {//capture el id--->ruta/id
-    const id = req.params.id 
-    try{
-        const proveedorDB = await Proveedor.findOne({_id: id});
-        console.log(proveedorDB)
-        res.render('detalleProv',{
-            proveedor: proveedorDB,
-            error:false
-        })
-    }catch(error){
-        res.render('detalle',{
-        error: true,
-        mensaje: "No se encuentra el id escogido"
-    })
-    };
-}); */
-
 //Editar
 router.get('/:id', async (req, res) => { //recibeme los datos del formulario
     const { id } = req.params; //nos da los parametros que estamos recibiendo ene ste caso el id para borrar
@@ -82,48 +63,6 @@ router.get('/eliminarProv/:id', async (req, res) => { //recibeme los datos del f
     console.log(typeof req.next);
     res.redirect('/proveedores');
 });
-
-//Borrar 
-/* router.delete('/:id', async (req, res)=>{
-    const id = req.params.id;
-    try{
-        const proveedorDB = await Proveedor.findByIdAndDelete({_id: id});
-        if (proveedorDB) {
-            res.json({
-                estado: true,
-                mensaje: 'Eliminado c:'
-            })
-        } else {
-            res.json({
-                estado: false,
-                mensaje: 'No se pudo eliminar :C'
-            })
-        }
-    }catch (error){
-        console.log(error);
-    }
-}); */
-
-//Aqui vamos a editar los proveedores creados
-/* router.put('/:id', async(req, res)=>{
-    const id = req.params.id;
-    const body = req.body
-    try{
-        const proveedorDB = await Proveedor.findByIdAndUpdate(id, body, {useFindAndModify: false});
-        console.log(proveedorDB);
-        res.json({
-            estado: true,
-            mensaje: 'Editado'
-        })
-    }catch (error){
-        console.log(error);
-        res.json({
-            estado: false,
-            mensaje: 'No se pudo editar :C'
-        })
-    }
-}) */
-
 
 
 module.exports = router;

@@ -1,0 +1,63 @@
+<%- layout('../templates/cali.ejs') %>
+
+    <body>
+        <div class="container">
+            <!--div class="row"-->
+                <h1 align="center" class="text-dark" >Datos Clientes</h1>
+                <a class="btn btn-success btn-block my-4"
+                href="/cali/agregarcliente">
+                    Crear nuevo cliente
+                </a>
+                <!--Lista-->
+                <!--div class="col-md-7"-->
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Numero </th>
+                                <th>Cedula </th>
+                                <th>Nombre </th>
+                                <th>Direccion </th>
+                                <th>Telefono </th>
+                                <th>Correo </th>
+                                <th>Operaciones </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(var i=0; i < clientesCali.length; i++) {%>
+                                <tr>
+                                    <td>
+                                        <%= i + 1 %>
+                                    </td>
+                                    <!--muestrame los datos de uno en uno-->
+                                    <td>
+                                        <%= clientesCali[i].cedula%>
+                                    </td>
+                                    <td>
+                                        <%= clientesCali[i].nombre%>
+                                    </td>
+                                    <td>
+                                        <%= clientesCali[i].direccion%>
+                                    </td>
+                                    <td>
+                                        <%= clientesCali[i].telefono%>
+                                    </td>
+                                    <td>
+                                        <%= clientesCali[i].correo%>
+                                    </td>
+                                    <td>
+                                        <a href="/cali/editcliente/<%= clientesCali[i]._id%>"
+                                            class="btn btn-warning btn-block">Editar</a>
+                                        <a href="/cali/eliminarcliente/<%= clientesCali[i]._id%>"
+                                            class="btn btn-danger btn-block">Eliminar</a>                                        
+                                    </td>
+                                </tr>
+
+                                <% } %>
+                                    <!--recorreme los clientes-->
+
+                        </tbody>
+                    </table>
+                <!--/div-->
+            </div>
+        <!--/div-->
+    </body>

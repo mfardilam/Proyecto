@@ -1,15 +1,16 @@
 const mongoose = require('mongoose');
-const { Schema } = mongoose;
+const Schema = mongoose.Schema;
 
 //Modelo de datos
 const csvSchema = new Schema({
-    codigo_producto: Number,
+    codigo_producto: String,
     nombre_producto: String,
-    nitproveedor: Number,
-    precio_compra: Number,
-    ivacompra: Number,
-    precio_venta: Number,
+    nitproveedor: String,
+    precio_compra: String,
+    ivacompra: String,
+    precio_venta: String,
 });
 
-//cree una coleccion llamada productos y guarde ahí el modelo de datos
-module.exports = mongoose.model('productos',csvSchema);
+//Exportamos para usarlo en otros modulos
+const Productos = mongoose.model('productos',csvSchema);
+module.exports = Productos;

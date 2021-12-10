@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 //Aqui creamos el esquema de datos del cliente
-const clienteSchema = new Schema({
+const proveedoresSchema = new Schema({
         nit: Number,
         nombreP: String,
         direccionP: String,
@@ -13,9 +13,5 @@ const clienteSchema = new Schema({
 
 //Llamado del Modelo
 
-const Cliente = mongoose.model('Proveedores', clienteSchema);
-
-
-
-
-module.exports = Cliente;
+const Proveedor = mongoose.model('Proveedores', proveedoresSchema);
+module.exports = Proveedor;

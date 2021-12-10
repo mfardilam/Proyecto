@@ -1,0 +1,17 @@
+<%- layout('../templates/cali.ejs') %>
+<body>
+    <h1 align="center" class="text-dark">Datos Proveedores</h1>
+                    <form action="/cali/proveedores/<%= proveedor.id %> " method="post" >  
+                        <input type="text" class="form-control my-2" name="nit" value="<%= proveedor.nit %>" id="nitInput">
+                        <input type="text" class="form-control my-2" name="nombreP" value="<%= proveedor.nombreP %>" id="nombreInput">
+                        <input type="text" class="form-control my-2" name="direccionP" value="<%= proveedor.direccionP %>" id="dirInput">
+                        <input type="text" class="form-control my-2" name="telefonoP" value="<%= proveedor.telefonoP %>" id="telInput">
+                        <input type="text" class="form-control my-2" name="ciudadP" value="<%= proveedor.ciudadP %>" id="ciudadInput">
+                        <button type="submit" 
+                        class="btn btn-warning btn-block">
+                            Editar proveedor
+                        </button>
+                    </form>
+                    <hr>
+    </div>
+</body>

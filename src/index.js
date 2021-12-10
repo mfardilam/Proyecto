@@ -31,10 +31,11 @@ app.set(express.static(__dirname + './public'));
 app.use(morgan('dev'));//descripcion breve -> dev
 //Vamos a decirle a express que reciba los datos del form, datos sencillos
 app.use(express.urlencoded({extended: false}));
+//Sesion que se puede pasar entre paginas
 app.use(session({
-    secret: 'misesionsecreta',
-    resave: false,
-    saveUninitialized: false
+    secret: 'misesionsecreta', //cada sesion se guarda de manera unica
+    resave: false,//evita que se vuelva a guardar
+    saveUninitialized: false //no se autoguarde
 }));
 app.use(flash());//usa sesion y envia msj antes de usar passport
 app.use(passport.initialize());//inicialice passport
@@ -50,31 +51,18 @@ app.use((req, res, next) => {
     
 });
 
-//PARTE DE CSV 
-//cargar con multer
-
-const storage = multer.diskStorage({
-    destination:(req, file, cb)=>{
-        cb(null, './public/uploads');
-    },
-    filename: (req, file, cb)=>{
-        cb(null, file.originalname);
-    }
-});
-
-
-//en el tutorial todo esta en var en vez de const, qué hacemos?
-const uploads = multer({storage: storage});
-//busque archivo del request
-app.use(bodyParser.urlencoded({ extended: false }));
-
-
 /////////////////////////
 
 //Rutas
 app.use('/', require('./rutas/index'));
-//app.use('/productos', require('./rutas/csv')); //No funciona >:c
+app.use('/productos', require('./rutas/csv'));
 app.use('/proveedores', require('./rutas/proveedores'));
+app.use('/ventas', require('./rutas/ventas'));
+// ruta para los assets
+app.use('/public', express.static('public'))
+app.use('/cali', require('./rutas/cali'));
+
+
 
 
 //Empezando el servidor

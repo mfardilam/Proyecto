@@ -1,0 +1,49 @@
+<%- layout('../templates/login.ejs') %>
+<body>
+    <div class="container">
+        <br>
+        <h1 align="center" class="text-dark" >Productos</h1>
+        <br>
+        <a class="btn btn-success btn-block my-4"
+        href="/productos">
+            Subir otro archivo
+        </a><br>
+          <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col"># Id</th>
+                    <th scope="col">Código</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">NIT del proveedor</th>
+                    <th scope="col">Precio ($COL)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (arrayProducto.length> 0) { %>
+                    <% arrayProducto.forEach(producto=> { %>
+                        <tr>
+                            <th scope="row">
+                                <%= producto.id %>
+                            </th>
+                            <td>
+                                <%= producto.codigo_producto %>
+                            </td>
+                            <td>
+                                <%= producto.nombre_producto %>
+                            </td>
+                            <td>
+                                <%= producto.nitproveedor %>
+                            </td>
+                            <td>
+                                <%= producto.precio_venta %>
+                            </td>
+                        </tr>
+
+                        <% }) %>
+                            <% } %>
+
+
+            </tbody>
+        </table>
+    </div>
+</body>
